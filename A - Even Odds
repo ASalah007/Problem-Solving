@@ -1,0 +1,17 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+
+
+int main()
+{
+	unsigned long long n,b,k;
+	cin>>n>>k;
+	b = n - n/2;
+	if(k<=b)
+		cout<<  1 + 2*(k-1) ;
+	else 
+		cout<<  2 + 2*(k-b-1);
+	
+}
