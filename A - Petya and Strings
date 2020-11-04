@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+#include <cctype>
+
+
+int main()
+{
+    std::string s1 {};
+    std::string s2 {};
+    getline(std::cin,s1);
+    getline(std::cin,s2);
+    
+    for(char &s: s1)
+        s=tolower(s);
+        
+    for(char &s: s2)
+        s=tolower(s);
+    
+    if (s1>s2)
+        std::cout<<"1"<<std::endl;
+    else if(s1<s2)
+        std::cout<<"-1"<<std::endl;
+    else
+        std::cout<<"0"<<std::endl;
+    
+
+}
