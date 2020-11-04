@@ -1,0 +1,40 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+// vector<int> -> int
+// returns the largest number in the array and 0 if the array is empty
+int main()
+{
+	int n;cin>>n;
+	int a [n];
+	
+	for(int i{0}; i<n; i++)
+		cin>> a[i];
+	
+	int temp {abs(a[0])};
+	
+	for(int i{0}; i<n; i++)
+		a[i] += temp ;
+	
+	cout << a[1]  - a[0] << " " <<  a[n-1] -a[0] <<endl;
+	for( int i{1}; i<n-1; i++)
+	{
+		int mbe { a[i]   - a[i-1] };
+		int maf { a[i+1] - a[i]   };
+		
+		int Mbe {a[i] - a[0]};
+		int Maf {a[n-1] - a[i]};
+		
+		if( mbe < maf )
+			cout<< mbe << " " ;
+		else
+			cout<< maf<< " " ;
+		if(Mbe > Maf)
+			cout<< Mbe <<endl;
+		else
+			cout<< Maf <<endl;
+	}
+	cout << a[n-1] - a[n-2] << " " <<  a[n-1] - a[0] <<endl;
+}
