@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+
+
+int main()
+{
+	int n; cin>>n;
+	
+	if (n<26)
+	{
+		cout<<"NO";
+		return 0;
+	}
+	
+	vector <char> vec (n);
+	
+	for(auto& v: vec )
+	{
+		cin>>v;
+		v = tolower(v);
+	}
+	sort(vec.begin(),vec.end());
+	int size =n;
+	
+	for(int i{0}; i<n-1; i++)
+		if(vec.at(i) == vec.at(i+1))
+			size--;
+			
+	if(size >= 26)
+		cout<<"YES"<<endl;
+	else
+		cout<<"NO"<<endl;
+}
