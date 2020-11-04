@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+
+
+int main()
+{
+	char a; cin>>a;
+	string s{"qwertyuiopasdfghjkl;zxcvbnm,./"};
+	string temp;
+	cout<<flush;
+	cin.ignore();
+	getline (cin, temp);
+	if(a == 'R')
+		for(auto c: temp)
+			cout<< *(find(s.begin(),s.end(),c) - 1 );
+	else
+		for(auto c: temp)
+			cout<< *(find(s.begin(),s.end(),c) + 1 );
+
+}
