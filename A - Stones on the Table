@@ -1,0 +1,19 @@
+#include <iostream>
+
+using namespace std;
+int main ()
+{
+    int a; 
+    cin>>a; 
+    char arr [a];
+    for (auto& i : arr)
+        cin>>i;
+    int counter1 {0} ;
+    for (size_t i {1}; i<sizeof(arr); i++ )
+    {
+        if (arr[i]==arr[i-1])
+            ++counter1;
+    }
+        cout<< counter1<< endl;
+        
+}   
