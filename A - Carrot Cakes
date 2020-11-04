@@ -1,0 +1,62 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n ,t1,c,tb;
+    int tc1 = 0;
+    int tc2 = 0;
+    cin>> n >>t1>>c>>tb;
+    int tw;
+    
+    int cooked {0}; 
+    int m {0};
+    
+    
+    
+        do
+        {
+            if (m>tb)
+            {
+                tc2++;
+                if(tc2==t1)
+                {
+                    cooked+=c;
+                    tc2=0;
+                }
+            }
+            
+            if(tc1==t1)
+            {
+                cooked += c;
+                tc1= 0;
+            }
+            
+            if (cooked>=n)
+                tw=m;
+            m++;
+            tc1++;
+            } while (cooked < n);
+        
+        cooked = 0; 
+        int two =0;
+        tc1=0;
+        m=0;
+        
+        
+        do
+        {
+            two+=t1;
+            cooked +=c;
+        }while ( cooked < n);
+        
+        
+        if (two<=tw)
+            cout<<"NO"<<endl;
+        else 
+            cout<<"Yes"<<endl;
+        
+        
+    
+}
