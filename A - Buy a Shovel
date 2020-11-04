@@ -1,0 +1,30 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int k , r;
+    cin>> k >>r;
+    
+    int m = k ;
+    bool check = false;
+    
+    do {
+        
+        if ( m%10 == 0 )
+        {
+            cout<<m/k;
+            check =true;
+        }
+        else if( (m-r) % 10 == 0)
+        { 
+            cout<< m / k;
+            check= true;
+        }
+        else
+            m+=k;
+    }
+    while (check == false) ;
+
+}
