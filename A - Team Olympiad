@@ -1,0 +1,38 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+	int s; cin>>s;
+	vector <int> a1;
+	vector <int> a2;
+	vector <int> a3;
+	
+	
+	int q;
+	int Q {1};
+	
+	while (s--)
+	{
+		cin>>q;
+		if(q == 1)
+			a1.push_back(Q);
+		
+		else if(q == 2)
+			a2.push_back(Q);
+		
+		else 
+			a3.push_back(Q);
+	Q++;
+	}
+	
+	size_t a { min( min(a1.size(),a2.size()) , a3.size()) }; 	
+	
+	cout<<a<<endl;
+	
+	for (int i=0; i<a; i++)
+		cout<<a1.at(i)<<" "<<a2.at(i) <<" "<<a3.at(i)<<endl;
+	
+}
