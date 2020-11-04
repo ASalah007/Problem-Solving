@@ -1,0 +1,28 @@
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+    int c1 {0},c2 {0},c3 {0},c4 {0};
+    
+    cin>>c1>>c2>>c3>>c4;
+    int totalc {0};
+    
+    string t;
+    cin>>t;
+    
+    for (size_t i {0}; i<t.size(); i++)
+    {
+        totalc = (t.at(i)=='1') ? totalc + c1 : totalc ;
+        totalc = (t.at(i)=='2') ? totalc + c2 : totalc ;
+        totalc = (t.at(i)=='3') ? totalc + c3 : totalc ;
+        totalc = (t.at(i)=='4') ? totalc + c4 : totalc ;
+    }
+    
+    cout<<totalc<<endl;
+    
+
+}
