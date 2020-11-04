@@ -1,0 +1,40 @@
+#include <iostream>
+#include <string>
+#include <cctype>
+#include <vector>
+
+int main()
+{
+    std::string s1 {};
+    std::cin>>s1;
+    size_t size {s1.size()};
+    
+    for (size_t j{0}; j<s1.size() ; j++)
+    {
+        int a=-1;
+        
+        for (size_t i{0}; i<s1.size() ; i++)
+        {
+            if (s1.at(j)==0)
+             {
+                a=0;
+                break;
+             }
+            if(s1.at(j)==s1.at(i))
+                a+=1;
+            if(a>0)
+             {
+                 s1.at(i)=0;
+                 size--;
+                 a--;
+             }
+        }
+    }
+    
+    if (size %2 ==0)
+        std::cout<<"CHAT WITH HER!"<<std::endl;
+    else
+        std::cout<<"IGNORE HIM!"<<std::endl;
+    
+    
+}
