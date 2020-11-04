@@ -1,0 +1,19 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+// vector<int> -> int
+// returns the largest number in the array and 0 if the array is empty
+int main()
+{
+	int n; cin>>n;
+	vector <int> arr (n);
+	for(int i{0}; i<n; i++)
+		cin>>arr.at(i);
+	for(int i{1} ;i<=n; i++)
+		cout<< ( std::find(arr.begin(),arr.end(),i) - arr.begin() ) + 1 <<" ";
+		
+	
+
+}
