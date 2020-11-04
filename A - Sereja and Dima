@@ -1,0 +1,37 @@
+#include <iostream>
+#include <vector>
+
+
+int main ()
+{
+    int a;
+    int d {0} , s {0} ; 
+    std::cin>>a;
+    std::vector <int> arr (a);
+    for (auto &i : arr)
+        std::cin>>i;
+    size_t j {arr.size() - 1};
+    int t {2};
+    int i {0};
+    for (size_t k {0}; k<arr.size(); k++)
+    {
+        if (arr[i] >= arr [j])
+        {
+            if (t%2==0)
+                d+=arr[i];
+            else
+                s+=arr[i];
+            i++;
+        }
+        else
+        {
+            if (t%2==0)
+                d+=arr[j];
+            else
+                s+=arr[j];
+            j--;
+        }    
+        t++;
+        }
+        std::cout<< d<<" "<<s<<std::endl;
+}
