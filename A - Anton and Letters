@@ -1,0 +1,37 @@
+#include <iostream>
+
+using namespace std;
+
+
+int main()
+{
+	string a ;
+	getline(cin, a);
+	
+	string b = a.substr(1,1);
+	
+	for(size_t i = 4 ; i< a.size() ; i+=3)
+	{
+		for(size_t j = 0 ; j<b.size(); j++)
+		{
+			if (a.at(i) != b.at(j) && j==(b.size()-1))
+			{
+				b.push_back(a.at(i));
+				break;
+			}
+			else if(a.at(i) == b.at(j))
+			{
+				break;
+			} 
+				
+		}
+	}
+	
+	if (a.size()<=2)
+		cout<<0;
+	else 
+		cout<<b.size()<<endl;
+	
+	
+}
+		
