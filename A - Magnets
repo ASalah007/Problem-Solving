@@ -1,0 +1,28 @@
+#include <iostream>
+#include <vector>
+
+
+int main ()
+{
+    int a;
+    std::cin>>a; 
+    std::vector <int> array1 (a); 
+    for (auto &i : array1)
+       {
+           int b;
+           std::cin>>b;
+            if (b>1)
+                i=1;
+            else
+                i=0;
+       }
+    int groups {1};
+    
+    for (size_t i = 1 ; i< array1.size(); i++)
+    {
+        if (array1.at(i) != array1.at(i-1))
+            groups++;
+    }
+    std::cout<<groups<<std::endl;
+    
+}
