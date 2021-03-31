@@ -1,0 +1,63 @@
+#include <iostream>
+#include <cstring>
+#include <vector>
+#include <stdio.h>
+
+char grid[101][101];
+bool seen[101][101];
+int r; 
+
+int dx[] = { 0,0,1,-1 };
+int dy[] = { 1,-1,0,0 };
+
+
+bool valid(int i, int j) {
+	return i >= 0 && j >= 0 && i < r && j < r;
+}
+
+void dfs(int i, int j) {
+	if (seen[i][j])
+		return;
+	seen[i][j] = true;
+	for (int k{ 0 }; k < 4; k++) {
+		int newi = i + dx[k];
+		int newj = j + dy[k];
+
+		if (valid(i, j) && !seen[newi][newj] && (grid[newi][newj] == 'x' || grid[newi][newj] == '@'))
+			dfs(newi, newj);
+
+
+
+	}
+}
+
+using namespace std;
+int main() {
+	int t;
+	cin >> t;
+	int T = t;
+	while (t--) {
+		int ans{ 0 };
+		cin >> r;
+		for (int i = 0; i < r; i++)
+		{
+			for (int j{ 0 }; j < r; j++)
+				cin >> grid[i][j];
+		}
+		memset(seen, 0, sizeof(seen));
+
+		for (int i{ 0 }; i < r; i++)
+		{
+			for (int j{ 0 }; j < r; j++)
+			{
+				if (valid(i,j) && !seen[i][j] && grid[i][j] == 'x')
+				{
+					dfs(i, j);
+					ans++;
+				}
+			}
+		}
+		cout << "Case " << T - t<< ": " << ans << endl;
+
+	}
+}
