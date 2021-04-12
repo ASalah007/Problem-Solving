@@ -1,0 +1,24 @@
+#include <bits/stdc++.h>
+ 
+using namespace std;
+ 
+ 
+ 
+int main(){
+ 
+    int n, k;
+    int x0,y0;
+    int x1,y1;
+    long double answer {0.0};
+ 
+    cin>>n>>k;
+    cin>>x0>>y0;
+    n--;
+    while(n--){
+        cin>>x1>>y1;
+        answer += sqrt((x1-x0)*(x1-x0) + (y1-y0)*(y1-y0));
+        x0 = x1;
+        y0 = y1;
+    }  
+    cout <<fixed<<setprecision(9) <<(answer*k) / 50.0<<endl;
+}
