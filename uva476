@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+double rec [10][4];
+
+
+bool valid(int i, double x1, double y1)
+{
+    return (x1 > rec[i][0]) && (x1 < rec[i][2]) && (y1 < rec[i][1]) && (y1 > rec[i][3]);
+}
+int main(){
+    char a;
+    int rcount {0},i {0};
+    while (cin>>a && a =='r')
+    {
+            ++rcount;
+            for(int j{0}; j<4; j++)
+            {
+                double temp; cin>>temp;
+                rec[i][j] = temp;
+            }  
+            ++i;
+    }
+    
+    double x1,y1;
+    int I {1};    
+    while(cin>>x1>>y1 && x1 != 9999.9 && y1 != 9999.9)
+    {   
+        int vc {0};
+        for(int j{0}; j<rcount; j++)
+        {
+            if(valid(j, x1,y1))
+            {
+                cout<<"Point " << I <<" is contained in figure " << j+1 << "\n";
+                vc++;
+            }    
+        }
+        if (vc == 0)
+            cout<<"Point " << I <<" is not contained in any figure" <<"\n";
+        I++;
+    }
+}
