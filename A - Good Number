@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+
+int main() {
+	int n{0}, k{0}, count{0};
+	cin>>n>>k;
+	string a;
+	while(n--){
+		vector<bool> checked(k + 1);
+		cin>>a;
+
+		for(int i{0}; i<(int)a.size(); i++)
+			checked[(int)a[i] - 48] = true;
+
+		for(auto i : checked)
+			if (i==false)
+			{
+				count--;
+				break;
+			}
+		count++;
+	}
+	cout<<count<<endl;
+}
